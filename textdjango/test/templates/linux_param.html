@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'test/test.css'%}">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="../tests/" >
+    {% csrf_token %}
+    <div class="center">
+    <button type="submit" name="name" value="cpu">Информация о процессоре</button>
+    <button type="submit" name="name" value="disk">Информация о жёстком диске</button>
+    <button type="submit" name="name" value="network">Информация о сетевых подключениях</button>
+    </div>
+<!--    Тестовые ВАРИАНТЫ-->
+    <!--    <p style ='text-align:center'><button type="submit" name='-C'>Информация о процессоре</button></p>-->
+<!--&lt;!&ndash;    <a href='test/tests' type ='text' name="-C">><p> Информация о процессоре</p></a>&ndash;&gt;-->
+<!--    <button name="subjects" type="submit" value="-C">Информация о процессоре</button>-->
+<!--    <p>Name:<br> <input name="name" /></p>-->
+<!--    <input type="submit" value="A" name="name"/>-->
+</form>
+<!--<p class="content">{{response.content}}</p>-->
+<!--Раскрываем запрос-->
+{% for el in response.content %}
+    <p class="content">{{el}}</p>
+{% endfor %}
+</body>
+</html>

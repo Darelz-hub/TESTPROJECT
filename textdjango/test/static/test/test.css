@@ -1,0 +1,11 @@
+body{
+width: 1920px;
+height: 1080px;
+}
+.content{
+font-size: 20px;
+}
+.center{
+text-align: center;
+margin-top: 2%;
+}
